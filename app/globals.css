@@ -2,26 +2,67 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+@layer components {
+  .header {
+    @apply pb-[8px] w-full;
+    &__banner {
+      @apply bg-bg-green pt-[9px] pb-[3px] hidden xl:block;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+      &__row {
+        @apply px-6 flex items-center justify-between;
+
+        &__container {
+          @apply flex items-center gap-[10px] w-max;
+
+          &__item {
+            @apply p-[10px];
+
+            &__text {
+              @apply text-sm text-white font-bold;
+            }
+
+            &__icon {
+              @apply w-4 h-4 text-white inline mr-[5px];
+            }
+          }
+        }
+      }
+    }
+
+    &__navbar {
+      @apply pl-[38px] pr-[17px] flex gap-10 items-center justify-between xl:justify-end;
+
+      &__brand {
+        @apply py-[13px] pr-[79px] font-bold text-2xl;
+      }
+
+      &__desktop {
+        @apply w-full h-full py-[2px]  items-center justify-between hidden xl:flex;
+
+        &__nav {
+          @apply w-full flex items-center h-full;
+
+          &__end {
+            @apply justify-end;
+          }
+
+          > ul {
+            @apply flex items-center;
+
+            > li {
+              @apply text-sm font-bold;
+            }
+
+            .right {
+              @apply flex items-center gap-1 text-primary p-[15px];
+            }
+          }
+        }
+      }
+
+      &__mobile {
+        @apply xl:hidden flex items-center gap-6;
+      }
+    }
   }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
 }
