@@ -65,4 +65,44 @@
       }
     }
   }
+
+  .footer {
+    @apply mx-auto w-full max-w-[1050px] px-6 xl:px-0;
+
+    &__row {
+      @apply py-10 flex items-center justify-between;
+
+      &__brand {
+        @apply py-[13px] pr-[73px] font-bold text-2xl;
+      }
+
+      &__socials {
+        @apply flex items-center gap-5 w-[236px];
+
+        &__icon {
+          @apply text-primary h-6 w-6;
+        }
+      }
+    }
+
+    &__container {
+      @apply py-[50px];
+
+      &__row {
+        @apply flex flex-col lg:flex-row justify-start gap-[30px];
+
+        &__column {
+          @apply flex flex-col gap-5 flex-1;
+
+          &__title {
+            @apply text-base font-bold;
+          }
+
+          &__links {
+            @apply flex flex-col text-secondary-text gap-4 text-sm font-bold text-nowrap;
+          }
+        }
+      }
+    }
+  }
 }
