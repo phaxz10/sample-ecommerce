@@ -1,7 +1,8 @@
 import Image from "next/image";
 import type { Product } from "./types";
-import { BasketIcon, ChevronRightIcon, EyeIcon, HeartIcon } from "@assets";
+import { ChevronRightIcon, EyeIcon, HeartIcon } from "@assets";
 import Rating from "./Rating";
+import AddToCartBtn from "./AddToCartBtn";
 
 const getProductDetail = async (productId: string) => {
   const result = await fetch(`https://dummyjson.com/products/${productId}`);
@@ -96,16 +97,11 @@ const ProductDetailsPage = async ({
                   <HeartIcon className="w-5 h-5 absolute top-0 left-0 translate-x-1/2 translate-y-1/2" />
                 </button>
 
-                <button
-                  type="button"
-                  className="relative p-[20px] rounded-full bg-white border"
-                >
-                  <BasketIcon className="w-5 h-5 absolute top-0 left-0 translate-x-1/2 translate-y-1/2" />
-                </button>
+                <AddToCartBtn item={product} />
 
                 <button
                   type="button"
-                  className="relative p-[20px] rounded-full bg-white border"
+                  className="relative p-[20px] rounded-full bg-white border cursor-not-allowed"
                 >
                   <EyeIcon className="w-5 h-5 absolute top-0 left-0 translate-x-1/2 translate-y-1/2" />
                 </button>

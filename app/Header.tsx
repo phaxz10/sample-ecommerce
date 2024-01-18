@@ -105,7 +105,7 @@ const Header = () => {
         {/* Mobile nav */}
         <div className="header__navbar__mobile">
           <SearchIcon className="header__navbar__mobile__icon" />
-          <BasketIcon className="header__navbar__mobile__icon" />
+          <CartIcon isMobile className="header__navbar__mobile__icon" />
           <HamburgerIcon className="header__navbar__mobile__icon" />
         </div>
       </div>

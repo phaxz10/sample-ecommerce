@@ -11,7 +11,7 @@ type State = {
     id: number;
     title: string;
     price: number;
-    image: string;
+    thumbnail: string;
     quantity: number;
   }[];
   total: number;
@@ -30,7 +30,7 @@ const addToCart: CaseReducer<
     id: number;
     title: string;
     price: number;
-    image: string;
+    thumbnail: string;
   }>
 > = (state, action) => {
   const item = action.payload;
@@ -53,7 +53,7 @@ const removeFromCart: CaseReducer<
     id: number;
     title: string;
     price: number;
-    image: string;
+    thumbnail: string;
   }>
 > = (state, action) => {
   const item = action.payload;
