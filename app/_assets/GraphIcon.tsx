@@ -14,7 +14,7 @@ const GraphIcon = ({ className }: Props) => {
     >
       <g
         id="icon ant-design-area-chart-outlined"
-        clip-path="url(#clip0_3310_46)"
+        clipPath="url(#clip0_3310_46)"
       >
         <path
           id="Vector"

@@ -13,6 +13,7 @@ import {
   UserIcon,
   YTIcon,
 } from "@assets";
+import CartIcon from "./_components/CartIcon";
 
 const Header = () => {
   return (
@@ -91,8 +92,7 @@ const Header = () => {
                 <SearchIcon />
               </li>
               <li className="right !font-normal">
-                <BasketIcon />
-                <span>1</span>
+                <CartIcon />
               </li>
               <li className="right !font-normal">
                 <HeartIcon />

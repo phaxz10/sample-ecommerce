@@ -12,7 +12,7 @@ const ChevronRightIcon = ({ className }: Props) => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g id="icon arrow-next" clip-path="url(#clip0_3310_51)">
+      <g id="icon arrow-next" clipPath="url(#clip0_3310_51)">
         <path
           id="@none"
           fillRule="evenodd"

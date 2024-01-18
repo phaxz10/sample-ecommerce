@@ -4,6 +4,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import Header from "./Header";
 import Footer from "./Footer";
+import ReduxProvider from "./_redux/Provider";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -19,10 +20,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={montserrat.className}>
-        <Header />
-
-        {children}
+      <body suppressHydrationWarning className={montserrat.className}>
+        <ReduxProvider>
+          <Header />
+          {children}
+        </ReduxProvider>
 
         <Footer />
       </body>
