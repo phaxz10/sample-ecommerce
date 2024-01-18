@@ -19,6 +19,7 @@ const config: Config = {
         "bg-dark": "#252B42",
         "bg-light": "#FFFFFF",
         "bg-green": "#23856D",
+        muted: "#BDBDBD",
       },
     },
   },

@@ -20,3 +20,5 @@ export { default as ClockIcon } from "./ClockIcon";
 export { default as GraphIcon } from "./GraphIcon";
 export { default as ChevronRightIcon } from "./ChevronRightIcon";
 export { default as ChevronDownIcon } from "./ChevronDownIcon";
+
+export { default as EyeIcon } from "./EyeIcon";
