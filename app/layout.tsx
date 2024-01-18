@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import Header from "./Header";
 import Footer from "./Footer";
 import ReduxProvider from "./_redux/Provider";
+import { Toaster } from "react-hot-toast";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -27,6 +28,8 @@ export default function RootLayout({
         </ReduxProvider>
 
         <Footer />
+
+        <Toaster />
       </body>
     </html>
   );

@@ -12,7 +12,6 @@ type Props = {
 const AddToCartBtn = ({ item }: Props) => {
   const dispatch = useAppDispatch();
   const onAddToCartClick = () => {
-    console.log("clicked", item);
     dispatch(cartAction.addToCart(item));
   };
   return (

@@ -1,8 +1,10 @@
 import Image from "next/image";
-import type { Product } from "./types";
-import { ChevronRightIcon, EyeIcon, HeartIcon } from "@assets";
+import { ChevronRightIcon, EyeIcon } from "@assets";
 import Rating from "./Rating";
 import AddToCartBtn from "./AddToCartBtn";
+
+import type { Product } from "./types";
+import AddToWishlistBtn from "./AddToWishlistBtn";
 
 const getProductDetail = async (productId: string) => {
   const result = await fetch(`https://dummyjson.com/products/${productId}`);
@@ -24,8 +26,6 @@ const ProductDetailsPage = async ({
   };
 }) => {
   const product = await getProductDetail(params.productId);
-
-  console.log(product);
 
   const isInStock = product.stock > 0;
   return (
@@ -90,12 +90,7 @@ const ProductDetailsPage = async ({
                   Select Options
                 </button>
 
-                <button
-                  type="button"
-                  className="relative p-[20px] rounded-full bg-white border"
-                >
-                  <HeartIcon className="w-5 h-5 absolute top-0 left-0 translate-x-1/2 translate-y-1/2" />
-                </button>
+                <AddToWishlistBtn item={product} />
 
                 <AddToCartBtn item={product} />
 

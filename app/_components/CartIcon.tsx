@@ -16,7 +16,6 @@ const CartIcon = ({ isMobile, className }: Props) => {
     (state) => state.cartReducer.cartItems
   ).reduce((acc, item) => acc + item.quantity, 0);
 
-  const isCartOpen = useAppSelector((state) => state.cartReducer.isCartOpen);
   const dispatch = useAppDispatch();
 
   const onBasketClick = () => {
@@ -33,12 +32,12 @@ const CartIcon = ({ isMobile, className }: Props) => {
     <>
       <button className="relative" type="button" onClick={onBasketClick}>
         <BasketIcon className={className} />
-        {isMobile && cartItemCount > 0 && (
-          <div className="absolute -top-2 -right-2 p-2 rounded-full bg-danger">
+        {isMobile && cartItemCount > 0 && hasMounted && (
+          <span className="absolute -top-2 -right-2 p-2 rounded-full bg-danger">
             <span className="text-white text-[10px] absolute top-0 left-0 w-full h-full">
               {displayCount}
             </span>
-          </div>
+          </span>
         )}
       </button>
       {isMobile || !hasMounted ? null : <span>{displayCount}</span>}

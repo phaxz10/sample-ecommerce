@@ -1,10 +1,8 @@
 import Link from "next/link";
 import {
-  BasketIcon,
   ChevronDownIcon,
   FBIcon,
   HamburgerIcon,
-  HeartIcon,
   IGIcon,
   MailIcon,
   PhoneIcon,
@@ -13,7 +11,7 @@ import {
   UserIcon,
   YTIcon,
 } from "@assets";
-import CartIcon from "./_components/CartIcon";
+import { CartIcon, WishlistIcon } from "@components";
 
 const Header = () => {
   return (
@@ -95,8 +93,7 @@ const Header = () => {
                 <CartIcon />
               </li>
               <li className="right !font-normal">
-                <HeartIcon />
-                <span>1</span>
+                <WishlistIcon />
               </li>
             </ul>
           </div>

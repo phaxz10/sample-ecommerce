@@ -1,12 +1,14 @@
 "use client";
 
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import cartReducer from "./cartSlice";
 import { persistReducer, persistStore } from "redux-persist";
 import storage from "redux-persist/lib/storage";
+import cartReducer from "./cartSlice";
+import wishlistReducer from "./wishlistSlice";
 
 const rootReducer = combineReducers({
   cartReducer,
+  wishlistReducer,
 });
 
 const persistedReducer = persistReducer(

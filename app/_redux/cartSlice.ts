@@ -5,6 +5,7 @@ import {
   createSlice,
   type PayloadAction,
 } from "@reduxjs/toolkit";
+import toast from "react-hot-toast";
 
 type State = {
   cartItems: {
@@ -45,6 +46,7 @@ const addToCart: CaseReducer<
     state.cartItems.push({ ...item, quantity: 1 });
   }
   state.total += item.price;
+  toast.success("Item added to cart");
 };
 
 const removeFromCart: CaseReducer<
@@ -68,6 +70,7 @@ const removeFromCart: CaseReducer<
     state.cartItems.push({ ...item, quantity: 1 });
   }
   state.total -= item.price;
+  toast.success("Item removed from cart");
 };
 
 const toggleIsCartOpen: CaseReducer<
