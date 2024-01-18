@@ -1,9 +1,9 @@
 import Link from "next/link";
-import { FBIcon, IGIcon, TwitterIcon } from "./_assets";
+import { FBIcon, IGIcon, TwitterIcon } from "@assets";
 
 const Footer = () => {
   return (
-    <div className="footer">
+    <div className="footer container">
       <div className="footer__row">
         <div className="footer__row__brand">Bandage</div>
 

@@ -15,6 +15,7 @@ const config: Config = {
         secondary: "#F3CD03",
         success: "#2DC071",
         alert: "#E77C40",
+        danger: "#E74040",
         "bg-dark": "#252B42",
         "bg-light": "#FFFFFF",
         "bg-green": "#23856D",

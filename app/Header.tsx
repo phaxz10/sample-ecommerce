@@ -1,6 +1,7 @@
 import Link from "next/link";
 import {
   BasketIcon,
+  ChevronDownIcon,
   FBIcon,
   HamburgerIcon,
   HeartIcon,
@@ -11,7 +12,7 @@ import {
   TwitterIcon,
   UserIcon,
   YTIcon,
-} from "./_assets";
+} from "@assets";
 
 const Header = () => {
   return (
@@ -70,7 +71,9 @@ const Header = () => {
           <div className="header__navbar__desktop__nav">
             <ul className="gap-[15px]">
               <li>Home</li>
-              <li>Shop</li>
+              <li className="dropdown">
+                Shop <ChevronDownIcon className="w-[10px] h-[5.7px]" />
+              </li>
               <li>About</li>
               <li>Blog</li>
               <li>Contact</li>
