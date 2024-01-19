@@ -1,13 +1,15 @@
 import { Montserrat } from "next/font/google";
 import "./globals.css";
 
-import type { Metadata } from "next";
+import { Toaster } from "react-hot-toast";
 import Header from "./Header";
 import Footer from "./Footer";
 import ReduxProvider from "./_redux/Provider";
-import { Toaster } from "react-hot-toast";
+import ReactQueryClientProvider from "./_reactQuery/Provider";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
+
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Bandage",
@@ -21,16 +23,18 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body suppressHydrationWarning className={montserrat.className}>
-        <ReduxProvider>
-          <Header />
-          {children}
-        </ReduxProvider>
+      <ReactQueryClientProvider>
+        <body suppressHydrationWarning className={montserrat.className}>
+          <ReduxProvider>
+            <Header />
+            {children}
+          </ReduxProvider>
 
-        <Footer />
+          <Footer />
 
-        <Toaster />
-      </body>
+          <Toaster />
+        </body>
+      </ReactQueryClientProvider>
     </html>
   );
 }

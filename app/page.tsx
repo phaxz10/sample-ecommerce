@@ -5,7 +5,7 @@ import { BookReaderIcon, BookIcon, GrowthArrowIcon } from "@assets";
 import { getProducts } from "./_api/products";
 
 export default async function Home() {
-  const result = await getProducts();
+  const featuredProducts = await getProducts();
   return (
     <main className="">
       <ShopCardsContainer>
@@ -51,7 +51,10 @@ export default async function Home() {
             </p>
           </div>
 
-          <FeaturedProducts products={result.products} />
+          <FeaturedProducts
+            showMoreBtnVisible
+            featuredProducts={featuredProducts}
+          />
         </div>
       </section>
 

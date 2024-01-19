@@ -141,7 +141,7 @@ const ProductDetailsPage = async ({
 
           <hr />
         </div>
-        <FeaturedProducts products={featured.products} />
+        <FeaturedProducts featuredProducts={featured} />
       </div>
 
       {/* Gap for mobile view */}
