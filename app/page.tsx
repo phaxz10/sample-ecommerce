@@ -1,9 +1,11 @@
-import { ShopCardsContainer } from "@containers";
-import { BlogCard, ShopCard } from "@components";
-import { BookReaderIcon, BookIcon, GrowthArrowIcon } from "@assets";
 import Image from "next/image";
+import { ShopCardsContainer } from "@containers";
+import { BlogCard, FeaturedProducts, ShopCard } from "@components";
+import { BookReaderIcon, BookIcon, GrowthArrowIcon } from "@assets";
+import { getProducts } from "./_api/products";
 
-export default function Home() {
+export default async function Home() {
+  const result = await getProducts();
   return (
     <main className="">
       <ShopCardsContainer>
@@ -34,6 +36,25 @@ export default function Home() {
         />
       </ShopCardsContainer>
 
+      {/* Featured Products */}
+      <section className="featured_products_container">
+        <div className="featured_products_container__content">
+          <div className="featured_products_container__content__heading">
+            <h4 className="featured_products_container__content__heading__subtitle">
+              Featured Products
+            </h4>
+            <h3 className="featured_products_container__content__heading__title">
+              BESTSELLER PRODUCTS
+            </h3>
+            <p className="featured_products_container__content__heading__text">
+              Problems trying to resolve the conflict between
+            </p>
+          </div>
+
+          <FeaturedProducts products={result.products} />
+        </div>
+      </section>
+
       {/* Features */}
       <section className="container features">
         <div className="features__container">
@@ -45,7 +66,7 @@ export default function Home() {
               THE BEST SERVICES
             </h3>
             <p className="features__container__heading__text">
-              Problems trying to resolve the conflict between{" "}
+              Problems trying to resolve the conflict between
             </p>
           </div>
 

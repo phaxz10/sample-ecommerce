@@ -1,9 +1,10 @@
 "use client";
 
 import { BasketIcon } from "@assets";
-import { Product } from "./types";
 import { useAppDispatch } from "app/_redux/hooks";
 import { cartAction } from "app/_redux/cartSlice";
+
+import type { Product } from "app/types";
 
 type Props = {
   item: Pick<Product, "id" | "title" | "price" | "thumbnail">;

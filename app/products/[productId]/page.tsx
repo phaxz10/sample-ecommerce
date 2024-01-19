@@ -2,21 +2,10 @@ import Image from "next/image";
 import { ChevronRightIcon, EyeIcon } from "@assets";
 import Rating from "./Rating";
 import AddToCartBtn from "./AddToCartBtn";
-
-import type { Product } from "./types";
 import AddToWishlistBtn from "./AddToWishlistBtn";
-
-const getProductDetail = async (productId: string) => {
-  const result = await fetch(`https://dummyjson.com/products/${productId}`);
-
-  if (!result.ok) {
-    throw new Error("Something went wrong...");
-  }
-
-  const productJson: Awaited<Product> = await result.json();
-
-  return productJson;
-};
+import { getProductById, getProducts } from "app/_api/products";
+import { priceFormatter } from "app/_utils/formatter";
+import { FeaturedProducts } from "@components";
 
 const ProductDetailsPage = async ({
   params,
@@ -25,7 +14,10 @@ const ProductDetailsPage = async ({
     productId: string;
   };
 }) => {
-  const product = await getProductDetail(params.productId);
+  const [product, featured] = await Promise.all([
+    getProductById(params.productId),
+    getProducts(),
+  ]);
 
   const isInStock = product.stock > 0;
   return (
@@ -143,6 +135,18 @@ const ProductDetailsPage = async ({
         </div>
       </section>
 
+      <div className="hidden mx-auto w-full max-w-max py-12 md:flex flex-col gap-6">
+        <div className="px-6 flex flex-col gap-6">
+          <h3 className="text-2xl font-bold ">BEST SELLER PRODUCTS</h3>
+
+          <hr />
+        </div>
+        <FeaturedProducts products={featured.products} />
+      </div>
+
+      {/* Gap for mobile view */}
+      <div className="md:hidden pb-[110px]" />
+
       {/* Brands */}
       <section className="container">
         <div className="py-[50px] flex flex-col md:flex-row items-center justify-center flex-wrap gap-[30px]">
@@ -200,14 +204,3 @@ const ProductDetailsPage = async ({
 };
 
 export default ProductDetailsPage;
-
-const priceFormatter = (price: number) => {
-  const { format } = new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: "USD",
-    maximumFractionDigits: 2,
-    minimumFractionDigits: 2,
-  });
-
-  return format(price);
-};

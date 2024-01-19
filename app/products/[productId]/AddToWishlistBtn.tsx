@@ -2,9 +2,10 @@
 
 import { useEffect, useState } from "react";
 import { HeartIcon } from "@assets";
-import { Product } from "./types";
 import { useAppDispatch, useAppSelector } from "app/_redux/hooks";
 import { wishlistAction } from "app/_redux/wishlistSlice";
+
+import type { Product } from "app/types";
 
 type Props = {
   item: Pick<Product, "id" | "title" | "thumbnail">;

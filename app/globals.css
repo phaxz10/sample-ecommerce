@@ -151,6 +151,64 @@
     }
   }
 
+  .featured_products_container {
+    &__content {
+      @apply py-20 flex flex-col;
+
+      &__heading {
+        @apply container flex flex-col items-center gap-[10px] px-6 md:px-0 pb-6;
+
+        &__subtitle {
+          @apply text-xl text-center;
+        }
+
+        &__title {
+          @apply font-bold text-2xl text-center;
+        }
+
+        &__text {
+          @apply text-sm text-center;
+        }
+      }
+    }
+  }
+
+  .featured_products {
+    @apply mx-auto w-full max-w-[1083px] px-6 py-8 flex flex-col sm:flex-row items-center justify-center flex-wrap gap-x-[30px] gap-y-[30px] sm:gap-y-[15px];
+
+    &__card {
+      @apply w-full sm:w-max self-stretch flex flex-col;
+
+      &__image {
+        @apply object-cover object-center w-full sm:max-w-[182px] aspect-[182/238];
+      }
+
+      &__content {
+        @apply flex-1 flex sm:max-w-[182px] flex-col gap-[10px] p-[25px] pb-[35px] justify-between;
+
+        &__name {
+          @apply truncate font-bold text-center break-words;
+        }
+
+        &__description {
+          @apply truncate text-center text-secondary-text font-bold text-sm;
+        }
+
+        &__price {
+          @apply flex items-center justify-center gap-[5px];
+
+          &__original {
+            @apply text-muted font-bold;
+          }
+
+          &__discounted {
+            @apply text-bg-green font-bold;
+          }
+        }
+      }
+    }
+  }
+
   .features {
     @apply pb-4;
 
