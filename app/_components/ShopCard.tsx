@@ -19,7 +19,7 @@ const ShopCard = ({ isFirst, bgImage, link, heading, title }: Props) => {
         height={800}
         className="shop_card__image"
         quality={75}
-        loading="lazy"
+        priority
       />
 
       <div className="shop_card__card_content">

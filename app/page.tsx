@@ -245,8 +245,9 @@ export default function Home() {
       <section className="relative w-full">
         <Image
           src="/images/cta_bg.jpg"
-          layout="fill"
-          className="absolute top-0 left-0 z-0 object-cover object-center"
+          className="absolute w-full h-full top-0 left-0 z-0 object-cover object-center"
+          width={1440}
+          height={640}
           alt="cta"
         />
 

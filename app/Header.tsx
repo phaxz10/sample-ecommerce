@@ -69,14 +69,26 @@ const Header = () => {
         <div className="header__navbar__desktop">
           <div className="header__navbar__desktop__nav">
             <ul className="gap-[15px]">
-              <li>Home</li>
-              <li className="dropdown">
-                Shop <ChevronDownIcon className="w-[10px] h-[5.7px]" />
+              <li>
+                <Link href="/">Home</Link>
               </li>
-              <li>About</li>
-              <li>Blog</li>
-              <li>Contact</li>
-              <li>Pages</li>
+              <li>
+                <Link className="dropdown" href="/">
+                  Shop <ChevronDownIcon className="w-[10px] h-[5.7px]" />
+                </Link>
+              </li>
+              <li>
+                <Link href="/">About</Link>
+              </li>
+              <li>
+                <Link href="/">Blog</Link>
+              </li>
+              <li>
+                <Link href="/">Contact</Link>
+              </li>
+              <li>
+                <Link href="/">Pages</Link>
+              </li>
             </ul>
           </div>
 

@@ -60,7 +60,7 @@
             @apply flex items-center;
 
             > li {
-              @apply text-sm font-bold;
+              @apply text-sm font-bold cursor-pointer;
             }
 
             .right {
