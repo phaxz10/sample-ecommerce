@@ -66,7 +66,7 @@ const MobileMenu = ({ className }: Props) => {
 
       <div
         ref={menuRef}
-        className={`noScrollbar transition-all duration-300 ease-in-out xl:hidden fixed top-0 left-0 w-screen h-screen overflow-y-scroll bg-white z-50 ${
+        className={`noScrollbar pb-10 transition-all duration-300 ease-in-out xl:hidden fixed top-0 left-0 w-screen h-screen overflow-y-scroll bg-white z-50 ${
           !isOpen
             ? "opacity-0 pointer-events-none transition-opacity delay-300 translate-x-full"
             : ""
