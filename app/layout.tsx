@@ -31,7 +31,7 @@ export default function RootLayout({
       <ReactQueryClientProvider>
         <body suppressHydrationWarning className={montserrat.className}>
           <ReduxProvider>
-            {/* <Header /> */}
+            <Header />
             {children}
             <Footer />
 
