@@ -52,7 +52,7 @@ const SlideCart = () => {
 
   return (
     <div
-      className={`fixed top-0 left-0 w-screen h-screen z-50 bg-black/70 ${
+      className={`fixed top-0 left-0 w-screen h-screen z-50 bg-black/70 pb-10 ${
         !isCartOpen
           ? "opacity-0 pointer-events-none transition-opacity delay-300"
           : ""
