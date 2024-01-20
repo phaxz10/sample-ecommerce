@@ -10,8 +10,7 @@ import {
   UserIcon,
   YTIcon,
 } from "@assets";
-import { CartIcon, WishlistIcon } from "@components";
-import MobileMenu from "./_components/MobileMenu";
+import { CartIcon, MobileMenu, WishlistIcon } from "@components";
 
 const Header = () => {
   return (

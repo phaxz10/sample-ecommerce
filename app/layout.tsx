@@ -32,7 +32,7 @@ export default function RootLayout({
         <body suppressHydrationWarning className={montserrat.className}>
           <ReduxProvider>
             <Header />
-            {children}
+            {/* {children} */}
             <Footer />
 
             <SlideCart />

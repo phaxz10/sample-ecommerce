@@ -1,11 +1,11 @@
 "use client";
 
+import { useEffect } from "react";
+import Image from "next/image";
 import { MinusIcon, PlusIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { cartAction } from "app/_redux/cartSlice";
 import { useAppDispatch, useAppSelector } from "app/_redux/hooks";
 import { priceFormatter } from "app/_utils/formatter";
-import Image from "next/image";
-import { useEffect } from "react";
 
 const SlideCart = () => {
   const dispatch = useAppDispatch();

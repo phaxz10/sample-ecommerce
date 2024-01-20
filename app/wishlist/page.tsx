@@ -1,12 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
+import { TrashIcon } from "@heroicons/react/24/outline";
 import { useAppDispatch, useAppSelector } from "app/_redux/hooks";
 import { wishlistAction } from "app/_redux/wishlistSlice";
-import Image from "next/image";
 import { priceFormatter } from "app/_utils/formatter";
 import { Rating } from "@components";
-import { TrashIcon } from "@heroicons/react/24/outline";
 import { cartAction } from "app/_redux/cartSlice";
 
 const WhishlistPage = () => {

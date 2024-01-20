@@ -1,9 +1,9 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { BasketIcon } from "@assets";
 import { cartAction } from "app/_redux/cartSlice";
 import { useAppDispatch, useAppSelector } from "app/_redux/hooks";
-import { useEffect, useState } from "react";
 
 type Props = {
   isMobile?: boolean;

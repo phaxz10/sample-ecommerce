@@ -1,13 +1,14 @@
 "use client";
 
+import { useEffect } from "react";
 import Image from "next/image";
-import { priceFormatter } from "app/_utils/formatter";
-
-import type { Products } from "app/types";
 import { usePathname, useRouter } from "next/navigation";
 import { useInfiniteQuery, useQueryClient } from "@tanstack/react-query";
+import { priceFormatter } from "app/_utils/formatter";
+
 import { getProducts } from "app/_api/products";
-import { useEffect } from "react";
+
+import type { Products } from "app/types";
 
 type Props = {
   featuredProducts: Products;

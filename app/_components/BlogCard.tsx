@@ -1,6 +1,6 @@
-import { ClockIcon, GraphIcon, ChevronRightIcon } from "@assets";
 import Image from "next/image";
 import Link from "next/link";
+import { ClockIcon, GraphIcon, ChevronRightIcon } from "@assets";
 
 type Props = {
   isNew?: boolean;

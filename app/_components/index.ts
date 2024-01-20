@@ -7,3 +7,4 @@ export { default as FeaturedProducts } from "./FeaturedProducts";
 export { default as SlideCart } from "./SlideCart";
 
 export { default as Rating } from "./Rating";
+export { default as MobileMenu } from "./MobileMenu";

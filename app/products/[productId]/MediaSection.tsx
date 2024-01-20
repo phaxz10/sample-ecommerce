@@ -1,8 +1,8 @@
 "use client";
 
-import { ChevronRightIcon } from "@assets";
-import Image from "next/image";
 import { useState } from "react";
+import Image from "next/image";
+import { ChevronRightIcon } from "@assets";
 
 type Props = {
   images: string[];

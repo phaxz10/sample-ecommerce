@@ -1,9 +1,9 @@
 "use client";
 
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import { HeartIcon } from "@assets";
 import { useAppSelector } from "app/_redux/hooks";
-import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
 
 type Props = {
   className?: string;
