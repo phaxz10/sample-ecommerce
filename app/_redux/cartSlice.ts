@@ -14,6 +14,8 @@ type State = {
     price: number;
     thumbnail: string;
     quantity: number;
+    stock: number;
+    brand: string;
   }[];
   total: number;
   isCartOpen: boolean;
@@ -32,16 +34,16 @@ const addToCart: CaseReducer<
     title: string;
     price: number;
     thumbnail: string;
+    stock: number;
+    brand: string;
   }>
 > = (state, action) => {
   const item = action.payload;
   const itemExists = state.cartItems.find((i) => i.id === item.id);
   if (itemExists) {
-    state.cartItems.map((i) => {
-      if (i.id === item.id) {
-        i.quantity += 1;
-      }
-    });
+    toast.success("Item already in cart");
+    state.isCartOpen = true;
+    return;
   } else {
     state.cartItems.push({ ...item, quantity: 1 });
   }
@@ -49,28 +51,42 @@ const addToCart: CaseReducer<
   toast.success("Item added to cart");
 };
 
-const removeFromCart: CaseReducer<
+const removeAllCartItems: CaseReducer<State, PayloadAction<undefined>> = (
+  state
+) => {
+  toast.success("All items removed from cart");
+  state.cartItems = initialState.cartItems;
+  state.total = initialState.total;
+};
+
+const increment: CaseReducer<
   State,
   PayloadAction<{
     id: number;
-    title: string;
-    price: number;
-    thumbnail: string;
+  }>
+> = (state, action) => {
+  const item = action.payload;
+  const itemExists = state.cartItems.find((i) => i.id === item.id);
+  if (itemExists && itemExists.quantity < itemExists.stock) {
+    itemExists.quantity += 1;
+    state.total += itemExists.price;
+  }
+};
+
+const decrement: CaseReducer<
+  State,
+  PayloadAction<{
+    id: number;
   }>
 > = (state, action) => {
   const item = action.payload;
   const itemExists = state.cartItems.find((i) => i.id === item.id);
   if (itemExists) {
-    state.cartItems.map((i) => {
-      if (i.id === item.id) {
-        i.quantity -= 1;
-      }
-    });
-  } else {
-    state.cartItems.push({ ...item, quantity: 1 });
+    if (itemExists.quantity > 1) {
+      itemExists.quantity -= 1;
+      state.total -= itemExists.price;
+    }
   }
-  state.total -= item.price;
-  toast.success("Item removed from cart");
 };
 
 const toggleIsCartOpen: CaseReducer<
@@ -107,9 +123,11 @@ export const cartSlice = createSlice({
   initialState,
   reducers: {
     addToCart,
-    removeFromCart,
     removeItemFromCart,
     toggleIsCartOpen,
+    increment,
+    decrement,
+    removeAllCartItems,
   },
 });
 

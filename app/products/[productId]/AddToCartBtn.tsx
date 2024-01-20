@@ -7,7 +7,10 @@ import { cartAction } from "app/_redux/cartSlice";
 import type { Product } from "app/types";
 
 type Props = {
-  item: Pick<Product, "id" | "title" | "price" | "thumbnail">;
+  item: Pick<
+    Product,
+    "id" | "title" | "price" | "thumbnail" | "stock" | "brand"
+  >;
 };
 
 const AddToCartBtn = ({ item }: Props) => {

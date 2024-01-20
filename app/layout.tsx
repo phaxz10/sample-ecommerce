@@ -10,6 +10,7 @@ import ReactQueryClientProvider from "./_reactQuery/Provider";
 const montserrat = Montserrat({ subsets: ["latin"] });
 
 import type { Metadata } from "next";
+import SlideCart from "./_components/SlideCart";
 
 export const metadata: Metadata = {
   title: "Bandage",
@@ -28,11 +29,11 @@ export default function RootLayout({
           <ReduxProvider>
             <Header />
             {children}
+            <Footer />
+
+            <SlideCart />
+            <Toaster />
           </ReduxProvider>
-
-          <Footer />
-
-          <Toaster />
         </body>
       </ReactQueryClientProvider>
     </html>

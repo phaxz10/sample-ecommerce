@@ -274,3 +274,16 @@
     @apply w-full bg-white shadow drop-shadow;
   }
 }
+
+.noScrollbar::-webkit-scrollbar {
+  display: none;
+  scroll-behavior: smooth;
+  scroll-snap-align: center;
+}
+
+.noScrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  scroll-behavior: smooth;
+  scroll-snap-align: center;
+}
