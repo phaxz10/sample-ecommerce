@@ -8,7 +8,10 @@ import { wishlistAction } from "app/_redux/wishlistSlice";
 import type { Product } from "app/types";
 
 type Props = {
-  item: Pick<Product, "id" | "title" | "thumbnail">;
+  item: Pick<
+    Product,
+    "id" | "title" | "thumbnail" | "price" | "discountPercentage" | "rating"
+  >;
 };
 
 const AddToWishlistBtn = ({ item }: Props) => {

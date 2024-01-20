@@ -8,6 +8,9 @@ type State = {
     id: number;
     title: string;
     thumbnail: string;
+    price: number;
+    rating: number;
+    discountPercentage: number;
   }[];
 };
 

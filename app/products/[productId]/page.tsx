@@ -6,6 +6,7 @@ import AddToWishlistBtn from "./AddToWishlistBtn";
 import { getProductById, getProducts } from "app/_api/products";
 import { priceFormatter } from "app/_utils/formatter";
 import { FeaturedProducts } from "@components";
+import MediaSection from "./MediaSection";
 
 const ProductDetailsPage = async ({
   params,
@@ -36,7 +37,7 @@ const ProductDetailsPage = async ({
       {/* Product Detail */}
       <section className="container pb-12">
         <div className="grid md:grid-cols-2 gap-[30px]">
-          <div></div>
+          <MediaSection images={product.images} />
           <div className="p-6 pt-[11px] md:min-h-[471px] flex flex-col justify-between">
             <div>
               <h3 className="text-xl pb-3">{product.title}</h3>
