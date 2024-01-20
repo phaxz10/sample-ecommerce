@@ -68,6 +68,7 @@ const SlideCart = () => {
           <div className="flex items-center justify-between gap-6">
             <h3 className="font-bold text-sm">Shopping Cart</h3>
             <button
+              aria-label="remove all items"
               type="button"
               onClick={onResetCart}
               className="text-xs underline text-danger"
@@ -121,6 +122,7 @@ const SlideCart = () => {
 
                       <div className="flex-1 max-w-max flex items-center justify-center gap-2">
                         <button
+                          aria-label="decrease quantity"
                           className={`p-1 rounded-full ${
                             canDecrease ? "bg-secondary-text" : "bg-muted"
                           }`}
@@ -131,6 +133,7 @@ const SlideCart = () => {
                         </button>
                         <span>{item.quantity}</span>
                         <button
+                          aria-label="increase quantity"
                           className={`p-1 rounded-full ${
                             canIncrease ? "bg-secondary-text" : "bg-muted"
                           }`}
@@ -147,6 +150,7 @@ const SlideCart = () => {
                         {priceFormatter(item.price)}
                       </h2>
                       <button
+                        aria-label="remove item"
                         className="underline text-danger text-xs"
                         type="button"
                         onClick={onRemoveItem}
@@ -175,7 +179,11 @@ const SlideCart = () => {
             </h2>
           </div>
 
-          <button className="w-max self-end rounded-full font-bold text-xs py-[15px] px-[25px] text-white bg-primary cursor-not-allowed">
+          <button
+            type="button"
+            aria-label="checkout button"
+            className="w-max self-end rounded-full font-bold text-xs py-[15px] px-[25px] text-white bg-primary cursor-not-allowed"
+          >
             Checkout
           </button>
         </div>

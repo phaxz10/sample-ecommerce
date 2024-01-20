@@ -76,6 +76,7 @@ const ProductDetailsPage = async ({
 
               <div className="flex items-center gap-[10px]">
                 <button
+                  aria-label="Select Options"
                   type="button"
                   className="text-white py-[10px] px-5 text-sm font-bold rounded-md bg-primary"
                 >
@@ -87,6 +88,7 @@ const ProductDetailsPage = async ({
                 <AddToCartBtn item={product} />
 
                 <button
+                  aria-label="View Details"
                   type="button"
                   className="relative p-[20px] rounded-full bg-white border cursor-not-allowed"
                 >
@@ -103,15 +105,24 @@ const ProductDetailsPage = async ({
         <div className="container px-6 xl:px-0 py-[10px] ">
           <div className="flex items-center justify-center">
             <button
+              aria-label="description"
               type="button"
               className="text-sm w-max p-6 font-bold text-secondary-text"
             >
               Description
             </button>
-            <button type="button" className="text-sm w-max p-6 font-bold">
+            <button
+              aria-label="additional information"
+              type="button"
+              className="text-sm w-max p-6 font-bold"
+            >
               Additional Information
             </button>
-            <button type="button" className="text-sm w-max p-6 font-bold">
+            <button
+              aria-label="reviews"
+              type="button"
+              className="text-sm w-max p-6 font-bold"
+            >
               Reviews <span className="text-bg-green">(0)</span>
             </button>
           </div>

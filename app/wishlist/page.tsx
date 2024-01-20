@@ -73,6 +73,7 @@ const WhishlistPage = () => {
                           {priceFormatter(item.price)}
                         </h2>
                         <button
+                          aria-label="remove from wishlist"
                           className="text-danger text-xs absolute -top-2 -right-2"
                           type="button"
                           onClick={onRemoveItemClick}
@@ -81,6 +82,7 @@ const WhishlistPage = () => {
                         </button>
 
                         <button
+                          aria-label="add to cart"
                           className="text-white text-xs font-bold w-max py-[15px] px-7 rounded-md bg-primary"
                           type="button"
                           onClick={onAddToCartClick}

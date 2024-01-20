@@ -28,7 +28,12 @@ const WishlistIcon = ({ className }: Props) => {
 
   return (
     <>
-      <button className="relative" type="button" onClick={onBasketClick}>
+      <button
+        aria-label="goto wishlist button"
+        className="relative"
+        type="button"
+        onClick={onBasketClick}
+      >
         <HeartIcon className={className} />
       </button>
       {!isClient ? null : <span>{displayCount}</span>}

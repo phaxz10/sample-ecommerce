@@ -30,7 +30,12 @@ const CartIcon = ({ isMobile, className }: Props) => {
 
   return (
     <>
-      <button className="relative" type="button" onClick={onBasketClick}>
+      <button
+        aria-label="toggle cart button"
+        className="relative"
+        type="button"
+        onClick={onBasketClick}
+      >
         <BasketIcon className={className} />
         {isMobile && cartItemCount > 0 && isClient && (
           <span className="absolute -top-2 -right-2 p-2 rounded-full bg-danger">

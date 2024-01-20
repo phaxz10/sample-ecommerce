@@ -31,6 +31,7 @@ const AddToWishlistBtn = ({ item }: Props) => {
 
   return (
     <button
+      aria-label="add to wishlist button"
       type="button"
       className="relative p-[20px] rounded-full bg-white border"
       onClick={onToggleItemToWishlist}

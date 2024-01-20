@@ -17,6 +17,7 @@ const AddToCartBtn = ({ item }: Props) => {
   };
   return (
     <button
+      aria-label="add to cart button"
       type="button"
       className="relative p-[20px] rounded-full bg-white border"
       onClick={onAddToCartClick}

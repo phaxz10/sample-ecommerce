@@ -76,7 +76,11 @@ const Footer = () => {
                   className="w-full text-secondary-text text-sm border rounded-md rounded-r-none border-r-0 py-[15px] pl-[22.5px]"
                   placeholder="Your Email"
                 />
-                <button className="text-sm text-white bg-primary rounded-r-md py-[15px] px-[22.5px]">
+                <button
+                  type="button"
+                  aria-label="subscribe button"
+                  className="text-sm text-white bg-primary rounded-r-md py-[15px] px-[22.5px]"
+                >
                   Subscribe
                 </button>
               </div>

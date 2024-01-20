@@ -27,9 +27,11 @@ const MediaSection = ({ images }: Props) => {
           alt={images[imageIndex]}
           width={500}
           height={500}
+          priority
         />
 
         <button
+          aria-label="show next image button"
           type="button"
           onClick={() => {
             cycleImages();
@@ -43,6 +45,7 @@ const MediaSection = ({ images }: Props) => {
       <div className="flex flex-wrap items-center gap-[19px] px-4 md:px-0">
         {images.map((image, idx) => (
           <button
+            aria-label="show this image button"
             onClick={() => {
               setImageIndex(idx);
             }}

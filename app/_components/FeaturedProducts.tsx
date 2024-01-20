@@ -95,7 +95,7 @@ const FeaturedProducts = ({
       </div>
       {showMoreBtnVisible && hasNextPage && (
         <button
-          role="button"
+          aria-label="Load more products"
           onClick={() => {
             fetchNextPage();
           }}

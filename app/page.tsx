@@ -295,7 +295,11 @@ export default async function Home() {
                 $16.48
               </h3>
 
-              <button className="bg-primary w-full text-white max-w-max mx-auto px-10 py-[15px] text-sm font-bold">
+              <button
+                type="button"
+                aria-label="ADD YOUR CALL TO ACTION"
+                className="bg-primary w-full text-white max-w-max mx-auto px-10 py-[15px] text-sm font-bold"
+              >
                 ADD YOUR CALL TO ACTION
               </button>
             </div>
