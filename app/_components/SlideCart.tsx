@@ -59,7 +59,7 @@ const SlideCart = () => {
       }`}
     >
       <div
-        className={`p-6 w-full bg-white h-full pb-10 md:max-w-screen-sm float-right transition-transform duration-300 ease-in-out ${
+        className={`noScrollbar overflow-y-scroll p-6 w-full bg-white h-full pb-10 md:max-w-screen-sm float-right transition-transform duration-300 ease-in-out ${
           isCartOpen ? "" : "translate-x-full"
         }`}
       >
@@ -76,7 +76,7 @@ const SlideCart = () => {
               Remove all
             </button>
           </div>
-          <div className="w-full border-b noScrollbar flex flex-col gap-4 h-[60vh] overflow-y-scroll p-2">
+          <div className="w-full border-b noScrollbar flex flex-col gap-4 h-[50vh] overflow-y-scroll p-2">
             {hasCartItems ? (
               cartItems.map((item) => {
                 const canIncrease = item.quantity < item.stock;
