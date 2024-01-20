@@ -20,6 +20,8 @@ const SlideCart = () => {
     toggleIsCartOpen,
   } = cartAction;
 
+  const hasCartItems = cartItems.length > 0;
+
   const totalItems = cartItems.reduce((acc, curr) => {
     return acc + curr.quantity;
   }, 0);
@@ -74,86 +76,92 @@ const SlideCart = () => {
             </button>
           </div>
           <div className="w-full border-b noScrollbar flex flex-col gap-4 h-[60vh] overflow-y-scroll p-2">
-            {cartItems.map((item) => {
-              const canIncrease = item.quantity < item.stock;
-              const canDecrease = item.quantity > 1;
+            {hasCartItems ? (
+              cartItems.map((item) => {
+                const canIncrease = item.quantity < item.stock;
+                const canDecrease = item.quantity > 1;
 
-              const onIncreaseQuantity = () => {
-                if (canIncrease) {
-                  dispatch(increment(item));
-                }
-              };
+                const onIncreaseQuantity = () => {
+                  if (canIncrease) {
+                    dispatch(increment(item));
+                  }
+                };
 
-              const onDecreaseQuantity = () => {
-                if (canDecrease) {
-                  dispatch(decrement(item));
-                }
-              };
+                const onDecreaseQuantity = () => {
+                  if (canDecrease) {
+                    dispatch(decrement(item));
+                  }
+                };
 
-              const onRemoveItem = () => {
-                dispatch(removeItemFromCart(item));
-              };
-              return (
-                <div
-                  className="flex flex-wrap w-full items-center justify-end gap-4"
-                  key={item.id}
-                >
-                  <Image
-                    className="mx-auto object-cover object-center aspect-square w-[100px] h-[100px]"
-                    src={item.thumbnail}
-                    width={100}
-                    height={100}
-                    alt={item.title}
-                  />
+                const onRemoveItem = () => {
+                  dispatch(removeItemFromCart(item));
+                };
+                return (
+                  <div
+                    className="flex flex-wrap w-full items-center justify-end gap-4"
+                    key={item.id}
+                  >
+                    <Image
+                      className="mx-auto object-cover object-center aspect-square w-[100px] h-[100px]"
+                      src={item.thumbnail}
+                      width={100}
+                      height={100}
+                      alt={item.title}
+                    />
 
-                  <div className="flex md:items-center flex-col md:flex-row gap-2 flex-1">
-                    <div className="flex-1 grid">
-                      <h3 className="w-full font-bold text-lg truncate">
-                        {item.title}
-                      </h3>
-                      <p className="text-secondary-text text-xs">
-                        {item.brand}
-                      </p>
+                    <div className="flex md:items-center flex-col md:flex-row gap-2 flex-1">
+                      <div className="flex-1 grid">
+                        <h3 className="w-full font-bold text-lg truncate">
+                          {item.title}
+                        </h3>
+                        <p className="text-secondary-text text-xs">
+                          {item.brand}
+                        </p>
+                      </div>
+
+                      <div className="flex-1 max-w-max flex items-center justify-center gap-2">
+                        <button
+                          className={`p-1 rounded-full ${
+                            canDecrease ? "bg-secondary-text" : "bg-muted"
+                          }`}
+                          type="button"
+                          onClick={onDecreaseQuantity}
+                        >
+                          <MinusIcon className="w-4 h-4 text-white" />
+                        </button>
+                        <span>{item.quantity}</span>
+                        <button
+                          className={`p-1 rounded-full ${
+                            canIncrease ? "bg-secondary-text" : "bg-muted"
+                          }`}
+                          type="button"
+                          onClick={onIncreaseQuantity}
+                        >
+                          <PlusIcon className="w-4 h-4 text-white" />
+                        </button>
+                      </div>
                     </div>
 
-                    <div className="flex-1 max-w-max flex items-center justify-center gap-2">
+                    <div className="items-end px-4 w-[120px] min-w-[120px] flex flex-col gap-3">
+                      <h2 className="text-lg font-bold">
+                        {priceFormatter(item.price)}
+                      </h2>
                       <button
-                        className={`p-1 rounded-full ${
-                          canDecrease ? "bg-secondary-text" : "bg-muted"
-                        }`}
+                        className="underline text-danger text-xs"
                         type="button"
-                        onClick={onDecreaseQuantity}
+                        onClick={onRemoveItem}
                       >
-                        <MinusIcon className="w-4 h-4 text-white" />
-                      </button>
-                      <span>{item.quantity}</span>
-                      <button
-                        className={`p-1 rounded-full ${
-                          canIncrease ? "bg-secondary-text" : "bg-muted"
-                        }`}
-                        type="button"
-                        onClick={onIncreaseQuantity}
-                      >
-                        <PlusIcon className="w-4 h-4 text-white" />
+                        Remove Item
                       </button>
                     </div>
                   </div>
-
-                  <div className="items-end px-4 w-[120px] min-w-[120px] flex flex-col gap-3">
-                    <h2 className="text-lg font-bold">
-                      {priceFormatter(item.price)}
-                    </h2>
-                    <button
-                      className="underline text-danger text-xs"
-                      type="button"
-                      onClick={onRemoveItem}
-                    >
-                      Remove Item
-                    </button>
-                  </div>
-                </div>
-              );
-            })}
+                );
+              })
+            ) : (
+              <div className="w-full flex p-6">
+                <h1 className="text-3xl text-center">No cart items</h1>
+              </div>
+            )}
           </div>
 
           <div className="self-end flex gap-10 items-center">
