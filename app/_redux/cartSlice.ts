@@ -7,16 +7,12 @@ import {
 } from "@reduxjs/toolkit";
 import toast from "react-hot-toast";
 
+import type { Product } from "app/types";
+
+type CartItem = Product & { quantity: number };
+
 type State = {
-  cartItems: {
-    id: number;
-    title: string;
-    price: number;
-    thumbnail: string;
-    quantity: number;
-    stock: number;
-    brand: string;
-  }[];
+  cartItems: CartItem[];
   total: number;
   isCartOpen: boolean;
 };
@@ -27,17 +23,10 @@ const initialState: State = {
   isCartOpen: false,
 };
 
-const addToCart: CaseReducer<
-  State,
-  PayloadAction<{
-    id: number;
-    title: string;
-    price: number;
-    thumbnail: string;
-    stock: number;
-    brand: string;
-  }>
-> = (state, action) => {
+const addToCart: CaseReducer<State, PayloadAction<CartItem>> = (
+  state,
+  action
+) => {
   const item = action.payload;
   const itemExists = state.cartItems.find((i) => i.id === item.id);
   if (itemExists) {

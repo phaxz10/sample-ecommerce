@@ -7,16 +7,13 @@ import { cartAction } from "app/_redux/cartSlice";
 import type { Product } from "app/types";
 
 type Props = {
-  item: Pick<
-    Product,
-    "id" | "title" | "price" | "thumbnail" | "stock" | "brand"
-  >;
+  item: Product;
 };
 
 const AddToCartBtn = ({ item }: Props) => {
   const dispatch = useAppDispatch();
   const onAddToCartClick = () => {
-    dispatch(cartAction.addToCart(item));
+    dispatch(cartAction.addToCart({ ...item, quantity: 1 }));
   };
   return (
     <button

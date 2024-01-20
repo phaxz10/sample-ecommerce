@@ -1,11 +1,10 @@
 import Image from "next/image";
 import { ChevronRightIcon, EyeIcon } from "@assets";
-import Rating from "./Rating";
 import AddToCartBtn from "./AddToCartBtn";
 import AddToWishlistBtn from "./AddToWishlistBtn";
 import { getProductById, getProducts } from "app/_api/products";
 import { priceFormatter } from "app/_utils/formatter";
-import { FeaturedProducts } from "@components";
+import { FeaturedProducts, Rating } from "@components";
 import MediaSection from "./MediaSection";
 
 const ProductDetailsPage = async ({

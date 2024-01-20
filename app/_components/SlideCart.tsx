@@ -102,7 +102,7 @@ const SlideCart = () => {
                     key={item.id}
                   >
                     <Image
-                      className="mx-auto object-cover object-center aspect-square w-[100px] h-[100px]"
+                      className="rounded-lg mx-auto object-cover object-center aspect-square w-[100px] h-[100px]"
                       src={item.thumbnail}
                       width={100}
                       height={100}

@@ -3,25 +3,20 @@
 import { CaseReducer, PayloadAction, createSlice } from "@reduxjs/toolkit";
 import toast from "react-hot-toast";
 
+import type { Product } from "app/types";
+
 type State = {
-  wishlist: {
-    id: number;
-    title: string;
-    thumbnail: string;
-    price: number;
-    rating: number;
-    discountPercentage: number;
-  }[];
+  wishlist: Product[];
 };
 
 const initialState: State = {
   wishlist: [],
 };
 
-const addToWishlist: CaseReducer<
-  State,
-  PayloadAction<State["wishlist"][number]>
-> = (state, action) => {
+const addToWishlist: CaseReducer<State, PayloadAction<Product>> = (
+  state,
+  action
+) => {
   const item = action.payload;
   const itemExists = state.wishlist.find((i) => i.id === item.id);
   if (itemExists) {

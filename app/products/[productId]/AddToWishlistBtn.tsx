@@ -8,14 +8,11 @@ import { wishlistAction } from "app/_redux/wishlistSlice";
 import type { Product } from "app/types";
 
 type Props = {
-  item: Pick<
-    Product,
-    "id" | "title" | "thumbnail" | "price" | "discountPercentage" | "rating"
-  >;
+  item: Product;
 };
 
 const AddToWishlistBtn = ({ item }: Props) => {
-  const [hasMounted, setHasMounted] = useState(false);
+  const [isClient, setIsClient] = useState(false);
   const dispatch = useAppDispatch();
   const isInWatchlist = useAppSelector((state) =>
     state.wishlistReducer.wishlist.find((i) => i.id === item.id)
@@ -29,7 +26,7 @@ const AddToWishlistBtn = ({ item }: Props) => {
   };
 
   useEffect(() => {
-    setHasMounted(true);
+    setIsClient(true);
   }, []);
 
   return (
@@ -40,7 +37,7 @@ const AddToWishlistBtn = ({ item }: Props) => {
     >
       <HeartIcon
         className={`${
-          isInWatchlist && hasMounted ? "text-red-500" : ""
+          isInWatchlist && isClient ? "text-red-500" : ""
         } w-5 h-5 absolute top-0 left-0 translate-x-1/2 translate-y-1/2`}
       />
     </button>

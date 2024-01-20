@@ -11,7 +11,7 @@ type Props = {
 
 const WishlistIcon = ({ className }: Props) => {
   const router = useRouter();
-  const [hasMounted, setHasMounted] = useState(false);
+  const [isClient, setIsClient] = useState(false);
   const wishlistItemCount = useAppSelector(
     (state) => state.wishlistReducer.wishlist
   ).length;
@@ -23,7 +23,7 @@ const WishlistIcon = ({ className }: Props) => {
   const displayCount = wishlistItemCount > 99 ? "99+" : wishlistItemCount;
 
   useEffect(() => {
-    setHasMounted(true);
+    setIsClient(true);
   }, []);
 
   return (
@@ -31,7 +31,7 @@ const WishlistIcon = ({ className }: Props) => {
       <button className="relative" type="button" onClick={onBasketClick}>
         <HeartIcon className={className} />
       </button>
-      {!hasMounted ? null : <span>{displayCount}</span>}
+      {!isClient ? null : <span>{displayCount}</span>}
     </>
   );
 };
