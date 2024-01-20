@@ -25,12 +25,12 @@ const BlogCard = ({
 }: Props) => {
   return (
     <div className="blog_card">
-      <div className="relative w-full aspect-square">
+      <div className="blog_card__row">
         <Image
           src={image}
           width={500}
           height={500}
-          className="object-cover h-full w-full"
+          className="blog_card__row__image"
           alt="blog1 image"
         />
 
@@ -41,37 +41,36 @@ const BlogCard = ({
         )}
       </div>
 
-      <div className="p-[25px] flex flex-col gap-[10px]">
-        <ul className="flex items-center gap-[15px] [&>*:first-child]:text-primary">
+      <div className="blog_card__content">
+        <ul className="blog_card__content__tags">
           {tags.map((tag) => (
-            <li key={tag} className="text-sm">
-              {tag}
-            </li>
+            <li key={tag}>{tag}</li>
           ))}
         </ul>
 
-        <h2 className="text-xl">{heading}</h2>
+        <h2 className="blog_card__content__title">{heading}</h2>
 
-        <p className="text-sm">{shortDescription}</p>
+        <p className="blog_card__content__description">{shortDescription}</p>
 
-        <div className="flex items-center justify-between py-[15px]">
-          <div className="flex items-center gap-[5px]">
-            <ClockIcon className="text-primary" />
-            <span className="text-sm">{formatDate(publishedAt)}</span>
+        <div className="blog_card__content__info">
+          <div className="blog_card__content__info__col">
+            <ClockIcon className="blog_card__content__info__col__icon text-primary" />
+            <span className="blog_card__content__info__col__text">
+              {formatDate(publishedAt)}
+            </span>
           </div>
 
-          <div className="flex items-center gap-[5px]">
-            <GraphIcon className="text-bg-green" />
-            <span className="text-sm">{comments} comments</span>
+          <div className="blog_card__content__info__col">
+            <GraphIcon className="blog_card__content__info__col__icon text-bg-green" />
+            <span className="blog_card__content__info__col__text">
+              {comments} comments
+            </span>
           </div>
         </div>
 
-        <Link
-          href={link}
-          className="flex items-center gap-[10px] text-sm font-bold"
-        >
+        <Link href={link} className="blog_card__link">
           <span>Learn More</span>
-          <ChevronRightIcon className="text-primary" />
+          <ChevronRightIcon className="blog_card__link__icon" />
         </Link>
       </div>
     </div>

@@ -160,17 +160,17 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* testimonials */}
-      <section className="container py-20">
-        <div className="flex items-center gap-[37px] flex-col md:flex-row justify-between px-7 md:px-12 py-12">
-          <div className="flex flex-col gap-7 w-full md:max-w-[438px]">
-            <h2 className="px-6 font-bold text-center text-2xl">
+      {/* testimonial */}
+      <section className="container testimonial">
+        <div className="testimonial__row">
+          <div className="testimonial__row__content">
+            <h2 className="testimonial__row__content__title">
               What they say about us
             </h2>
 
-            <div className="px-[35px] py-[30px] flex flex-col items-center gap-5">
+            <div className="testimonial__row__content__main">
               <Image
-                className="rounded-full aspect-square"
+                className="testimonial__row__content__main__userimage"
                 src="/images/testimonial/user.jpg"
                 width={90}
                 height={90}
@@ -178,84 +178,87 @@ export default async function Home() {
               />
 
               <Image
-                className=""
                 src="/images/testimonial/stars.png"
                 width={130}
                 height={22}
                 alt="stars"
               />
 
-              <p className="text-secondary-text text-sm font-bold text-center">
+              <p className="testimonial__row__content__main__text">
                 Slate helps you see how many more days you need to work to reach
                 your financial goal.
               </p>
 
-              <div className="flex flex-col items-center">
-                <p className="text-primary text-sm font-bold">Regina Miles</p>
-                <p className="text-sm font-bold">Designer</p>
+              <div className="testimonial__row__content__main__user">
+                <p className="testimonial__row__content__main__user__name">
+                  Regina Miles
+                </p>
+                <p className="testimonial__row__content__main__user__title">
+                  Designer
+                </p>
               </div>
             </div>
           </div>
 
-          <div className="grid grid-cols-3 gap-[17.85px]">
+          <div className="testimonial__tiles">
             <Image
-              className="object-cover aspect-square object-center"
+              className="testimonial__tiles__tile"
               src="/images/testimonial/1.jpg"
               width={150}
               height={150}
               alt="img1"
             />
             <Image
-              className="object-cover aspect-square object-center"
+              className="testimonial__tiles__tile"
               src="/images/testimonial/2.jpg"
               width={150}
               height={150}
               alt="img2"
             />
             <Image
-              className="object-cover aspect-square object-center"
+              className="testimonial__tiles__tile"
               src="/images/testimonial/3.jpg"
               width={150}
               height={150}
               alt="img3"
             />
             <Image
-              className="object-cover aspect-square object-center"
+              className="testimonial__tiles__tile"
               src="/images/testimonial/4.jpg"
               width={150}
               height={150}
               alt="img4"
             />
             <Image
-              className="object-cover aspect-square object-center"
+              className="testimonial__tiles__tile"
               src="/images/testimonial/5.jpg"
               width={150}
               height={150}
               alt="img5"
             />
             <Image
-              className="object-cover aspect-square object-center"
+              className="testimonial__tiles__tile"
               src="/images/testimonial/6.jpg"
               width={150}
               height={150}
               alt="img6"
             />
             <Image
-              className="object-cover aspect-square object-center"
+              className="testimonial__tiles__tile"
               src="/images/testimonial/7.jpg"
               width={150}
               height={150}
               alt="img7"
             />
             <Image
-              className="object-cover aspect-square object-center"
+              className="testimonial__tiles__tile"
               src="/images/testimonial/8.jpg"
               width={150}
               height={150}
               alt="img8"
             />
             <Image
-              className="object-cover aspect-square object-center"
+              className="testimonial__tiles__tile"
               src="/images/testimonial/9.jpg"
               width={150}
               height={150}
@@ -266,39 +269,39 @@ export default async function Home() {
       </section>
 
       {/* CTA */}
-      <section className="relative w-full">
+      <section className="cta_section">
         <Image
           src="/images/cta_bg.jpg"
-          className="absolute w-full h-full top-0 left-0 z-0 object-cover object-center"
+          className="cta_section__bg"
           width={1440}
           height={640}
           alt="cta"
         />
 
-        <div className="container z-10 relative">
-          <div className="py-[112px] md:pt-[160px]">
-            <div className="flex w-full items-center flex-col gap-[30px] max-w-[571px] mx-auto px-6 md:px-0">
-              <h4 className="text-sm font-bold text-center text-primary">
+        <div className="cta_section__main container">
+          <div className="cta_section__main__content">
+            <div className="cta_section__main__content__row">
+              <h4 className="cta_section__main__content__row__subtitle">
                 Designing Better Experience
               </h4>
 
-              <h1 className="text-[40px] text-center font-bold">
+              <h1 className="cta_section__main__content__row__title">
                 Problems trying to resolve the conflict between
               </h1>
 
-              <p className="text-sm text-center">
+              <p className="cta_section__main__content__row__description">
                 Problems trying to resolve the conflict between the two major
                 realms of Classical physics:
               </p>
 
-              <h3 className="price text-2xl font-bold text-center text-bg-green">
+              <h3 className="cta_section__main__content__row__highlight">
                 $16.48
               </h3>
 
               <button
                 type="button"
                 aria-label="ADD YOUR CALL TO ACTION"
-                className="bg-primary w-full text-white max-w-max mx-auto px-10 py-[15px] text-sm font-bold"
+                className="cta_section__main__content__row__button"
               >
                 ADD YOUR CALL TO ACTION
               </button>
