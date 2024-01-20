@@ -52,14 +52,14 @@ const SlideCart = () => {
 
   return (
     <div
-      className={`fixed top-0 left-0 w-screen h-screen z-50 bg-black/70 pb-10 ${
+      className={`fixed top-0 left-0 w-screen h-screen z-50 bg-black/70 ${
         !isCartOpen
           ? "opacity-0 pointer-events-none transition-opacity delay-300"
           : ""
       }`}
     >
       <div
-        className={`p-6 w-full bg-white h-full md:max-w-screen-sm float-right transition-transform duration-300 ease-in-out ${
+        className={`p-6 w-full bg-white h-full pb-10 md:max-w-screen-sm float-right transition-transform duration-300 ease-in-out ${
           isCartOpen ? "" : "translate-x-full"
         }`}
       >
