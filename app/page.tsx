@@ -4,6 +4,9 @@ import { BlogCard, FeaturedProducts, ShopCard } from "@components";
 import { BookReaderIcon, BookIcon, GrowthArrowIcon } from "@assets";
 import { getProducts } from "./_api/products";
 
+// this page showcases one way to use tailwindcss
+// by using custom classes for reusability and cleaner code
+
 export default async function Home() {
   const featuredProducts = await getProducts();
   return (

@@ -2,7 +2,6 @@ import Link from "next/link";
 import {
   ChevronDownIcon,
   FBIcon,
-  HamburgerIcon,
   IGIcon,
   MailIcon,
   PhoneIcon,
@@ -12,6 +11,7 @@ import {
   YTIcon,
 } from "@assets";
 import { CartIcon, WishlistIcon } from "@components";
+import MobileMenu from "./_components/MobileMenu";
 
 const Header = () => {
   return (
@@ -115,7 +115,7 @@ const Header = () => {
         <div className="header__navbar__mobile">
           <SearchIcon className="header__navbar__mobile__icon" />
           <CartIcon isMobile className="header__navbar__mobile__icon" />
-          <HamburgerIcon className="header__navbar__mobile__icon" />
+          <MobileMenu className="header__navbar__mobile__icon" />
         </div>
       </div>
     </section>

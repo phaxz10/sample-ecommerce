@@ -6,13 +6,13 @@
   body {
     @apply text-primary-text;
   }
-}
 
-@layer components {
   .container {
     @apply mx-auto w-full max-w-[1050px];
   }
+}
 
+@layer components {
   .header {
     @apply pb-[8px] w-full;
     &__banner {

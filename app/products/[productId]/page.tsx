@@ -7,6 +7,9 @@ import { priceFormatter } from "app/_utils/formatter";
 import { FeaturedProducts, Rating } from "@components";
 import MediaSection from "./MediaSection";
 
+// in this page, we use tailwindcss as how its intended to be used
+// use tailwind classes directly in jsx/html
+
 const ProductDetailsPage = async ({
   params,
 }: {
@@ -146,6 +149,7 @@ const ProductDetailsPage = async ({
         </div>
       </section>
 
+      {/* Featured Products */}
       <div className="hidden mx-auto w-full max-w-max py-12 md:flex flex-col gap-6">
         <div className="px-6 flex flex-col gap-6">
           <h3 className="text-2xl font-bold ">BEST SELLER PRODUCTS</h3>
