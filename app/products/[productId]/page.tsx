@@ -7,6 +7,21 @@ import { priceFormatter } from "app/_utils/formatter";
 import { FeaturedProducts, Rating } from "@components";
 import MediaSection from "./MediaSection";
 
+// for SEO
+export async function generateMetadata({
+  params,
+}: {
+  params: {
+    productId: string;
+  };
+}) {
+  const productDetails = await getProductById(params.productId);
+  return {
+    title: `${productDetails.title} | Bandage`,
+    description: productDetails.description,
+  };
+}
+
 // in this page, we use tailwindcss as how its intended to be used
 // use tailwind classes directly in jsx/html
 
