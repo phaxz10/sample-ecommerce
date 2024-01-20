@@ -25,7 +25,7 @@ const ProductDetailsPage = async ({
       {/* Breadcrumb */}
       <div className="py-6">
         <div className="container px-6 xl:px-0">
-          <div className="flex item-center gap-[15px] py-[10px]">
+          <div className="flex justify-center md:justify-normal item-center gap-[15px] py-[10px]">
             <span className="text-sm font-bold">Home</span>
             <ChevronRightIcon className="w-3 h-3 text-muted" />
             <span className="text-sm font-bold text-muted">Shop</span>
@@ -119,7 +119,7 @@ const ProductDetailsPage = async ({
               Additional Information
             </button>
             <button
-              aria-label="reviews"
+              aria-label="reviews (0)"
               type="button"
               className="text-sm w-max p-6 font-bold"
             >

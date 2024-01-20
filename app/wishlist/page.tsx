@@ -54,6 +54,7 @@ const WhishlistPage = () => {
                         width={100}
                         height={100}
                         alt={item.title}
+                        priority
                       />
 
                       <div className="flex md:items-center flex-col md:flex-row gap-2 flex-1">

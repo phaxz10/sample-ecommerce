@@ -38,7 +38,7 @@ const MediaSection = ({ images }: Props) => {
           }}
           className="absolute top-1/2 right-5 transform -translate-y-1/2"
         >
-          <ChevronRightIcon className="w-8 h-8 md:w-11 md:h-11 text-white" />
+          <ChevronRightIcon className="drop-shadow-[0_4px_3px_rgba(0,0,0,0.30)] w-8 h-8 md:w-11 md:h-11 text-white" />
         </button>
       </div>
 
